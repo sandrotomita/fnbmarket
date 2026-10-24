@@ -1,0 +1,7 @@
+<script>
+document.getElementById('copy').addEventListener('click',function(){
+ var t=document.getElementById('mail').textContent,m=document.getElementById('msg');
+ function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('mail'));var s=getSelection();s.removeAllRanges();s.addRange(r);m.textContent='Selected. Press Ctrl+C to copy.';}
+ try{navigator.clipboard.writeText(t).then(function(){m.textContent='Email copied.'},sel)}catch(e){sel()}
+});
+</script>
